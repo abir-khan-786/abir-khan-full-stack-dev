@@ -11,23 +11,17 @@ import {
 const JobResume = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Giant Ltd.",
-      duration: "2023 - Present",
+      title: "Full Stack Developer",
+      company: "Genres-Agency",
+      duration: "2023 - 2025",
       desc: "Leading the frontend team to build scalable dashboard solutions and optimizing performance by 40%.",
-    },
-    {
-      title: "Junior Web Developer",
-      company: "Creative Agency",
-      duration: "2021 - 2023",
-      desc: "Developed 20+ responsive websites and integrated third-party APIs using React and Node.js.",
     },
   ]
 
   const education = [
     {
-      degree: "B.Sc in Computer Science",
-      institution: "State University",
+      degree: "BSS Honours in Social Welfare",
+      institution: "National  University",
       duration: "2017 - 2021",
       desc: "Focused on Software Engineering, Data Structures, and Algorithms.",
     },
@@ -117,8 +111,9 @@ const JobResume = () => {
                 Available in PDF format (2.4 MB)
               </p>
               <a
-                href="/your-cv.pdf"
+                href="https://drive.google.com/file/d/1NPn6LYvU9VcCob4WziuwJrhDaXuUy8Ts/view?usp=drive_link"
                 download
+                target="_blank"
                 className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg shadow-orange-600/20"
               >
                 <Download size={18} /> Download Now
