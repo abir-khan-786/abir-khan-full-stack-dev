@@ -16,7 +16,7 @@ const RootLayout = ({
       {/* 1. flex-grow দেওয়া হয়েছে যাতে কন্টেন্ট কম থাকলেও ফুটার নিচে থাকে।
         2. pt-20 (Padding Top) দেওয়া হয়েছে যাতে fixed নাবারের নিচে কন্টেন্ট ঢাকা না পড়ে।
       */}
-      <main className="flex-grow pt-24 px-4 sm:px-8 lg:px-12 text-white">
+      <main className="flexGrow pt-24 px-4 sm:px-8 lg:px-12 text-white">
         {children}
       </main>
 

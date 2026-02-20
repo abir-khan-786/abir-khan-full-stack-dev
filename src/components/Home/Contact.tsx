@@ -9,6 +9,7 @@ import {
   Linkedin,
   Twitter,
   ArrowUpRight,
+  ContactIcon,
 } from "lucide-react"
 
 const Contact = () => {
@@ -51,14 +52,25 @@ const Contact = () => {
                     Email Me
                   </p>
                   <a
-                    href="mailto:abir@example.com"
+                    href="mailto:abirk2day@gmail.com"
                     className="text-white font-bold hover:text-orange-500 transition-colors"
                   >
-                    hello@abir.dev
+                    abirk2day@gmail.com
                   </a>
                 </div>
               </div>
 
+              <div className="flex items-center gap-6 group">
+                <div className="bg-[#0b1222] p-4 rounded-2xl border border-gray-800 group-hover:border-orange-500 transition-colors">
+                  <ContactIcon className="text-orange-500" size={24} />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">
+                    Phone
+                  </p>
+                  <p className="text-white font-bold hover:text-orange-500 transition-colors cursor-pointer" >01752103786</p>
+                </div>
+              </div>
               <div className="flex items-center gap-6 group">
                 <div className="bg-[#0b1222] p-4 rounded-2xl border border-gray-800 group-hover:border-orange-500 transition-colors">
                   <MapPin className="text-orange-500" size={24} />
@@ -107,7 +119,9 @@ const Contact = () => {
             </p>
 
             <motion.a
-              href="mailto:hello@example.com"
+
+              href="mailto:abirk2day@gmail.com"
+
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="flex items-center justify-between bg-orange-600 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-xl shadow-orange-600/20"
@@ -120,6 +134,7 @@ const Contact = () => {
               Available for new projects
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

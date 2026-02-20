@@ -39,7 +39,7 @@ const TechStack = () => {
   return (
     <section className="py-24 bg-[#0b1222] relative overflow-hidden">
       {/* Background Blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 blur-[120px] rounded-full -z-0"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2   bg-orange-500/5 blur-[120px] rounded-full z-0"></div>
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="text-center mb-16">
@@ -84,7 +84,7 @@ const TechStack = () => {
                 boxShadow: `0 0 30px ${tech.color}55`,
               }}
               transition={{ repeatType: "mirror", duration: 0.3 }}
-              className="p-8 rounded-3xl bg-[#0f172a] border border-gray-800 flex flex-col items-center justify-center gap-4 group shadow-xl"
+              className="p-8 rounded-3xl cursor-pointer bg-[#0f172a] border border-gray-800 flex flex-col items-center justify-center gap-4 group shadow-xl"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}

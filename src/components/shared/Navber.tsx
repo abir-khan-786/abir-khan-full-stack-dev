@@ -3,11 +3,13 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Rocket } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-
+  const [activeHash, setActiveHash] = useState("#home")
+  const pathname = usePathname()
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
@@ -16,11 +18,10 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-[100] transition-all duration-500 ${
-        scrolled
-          ? "bg-[#0f172a]/80 backdrop-blur-xl py-4 shadow-2xl border-b border-white/5"
-          : "bg-transparent py-8"
-      }`}
+      className={`fixed w-full z-[100] transition-all duration-500 ${scrolled
+        ? "bg-[#0f172a]/80 backdrop-blur-xl py-4 shadow-2xl border-b border-white/5"
+        : "bg-transparent py-8"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
         <motion.div
@@ -38,29 +39,31 @@ export const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
-          {["Home", "About", "Projects", "Contact", "Resume", "Blog"].map(
-            (item, i) => (
-              <motion.div
-                key={item}
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: i * 0.1 }}
-              >
+          {["Home", "About", "Projects", "Contact", "Resume", "Blog"].map((item, i) => {
+            const lowercaseItem = item.toLowerCase();
+
+            // ১. পাথ ঠিক করা: ব্লগ/রেজুমে হলে আলাদা পেজ, নাহলে হোমের হ্যাশ
+            const itemPath = item === "Blog" ? "/blog" : item === "Resume" ? "/resume" : `/#${lowercaseItem}`;
+
+            // ২. সিলেক্ট করার লজিক: 
+            // যদি পাথ এবং হ্যাশ মিলে যায় তবেই কালার হবে
+            const isActive = (pathname === "/blog" && item === "Blog") ||
+              (pathname === "/resume" && item === "Resume") ||
+              (activeHash === `#${lowercaseItem}` && pathname === "/");
+
+            return (
+              <motion.div key={item}>
                 <Link
-                  href={
-                    item === "Blog"
-                      ? "/blog"
-                      : item === "Resume"
-                        ? "/resume"
-                        : `/#${item.toLowerCase()}`
-                  }
-                  className="text-sm font-bold text-gray-400 hover:text-orange-500 transition-colors uppercase tracking-widest"
+                  href={itemPath}
+                  onClick={() => !["Blog", "Resume"].includes(item) && setActiveHash(`#${lowercaseItem}`)}
+                  className={`${isActive ? "text-orange-500" : "text-gray-400"
+                    } text-sm font-bold hover:text-orange-500 transition-colors uppercase tracking-widest`}
                 >
                   {item}
                 </Link>
               </motion.div>
-            ),
-          )}
+            );
+          })}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
