@@ -1,8 +1,13 @@
 "use client"
 import { motion } from "framer-motion"
 import { ExternalLink, Github, Eye } from "lucide-react"
+import { useState } from "react"
 
 const Projects = () => {
+
+  const [active, setActive] = useState<number | null>(null)
+
+
   const projects = [
     {
       title: "SwiftShop E-commerce",
@@ -36,6 +41,8 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          whileTap={{ opacity: 0, y: -20 }}
+          whileHover={{ opacity: 0 }}
           className="mb-16 text-center md:text-left"
         >
           <h2 className="text-5xl font-black text-white mb-4 italic">
@@ -57,18 +64,31 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group bg-[#0b1222] border border-gray-800 rounded-3xl overflow-hidden hover:border-orange-500/40 transition-all duration-500 shadow-2xl"
+              whileHover={{ y: -10 }}     // desktop
+              whileTap={{ y: -10 }}       // mobile
+              onTap={() =>
+                setActive(active === index ? null : index)
+              }
+              className="group bg-[#0b1222] border border-gray-800 rounded-3xl overflow-hidden hover:border-orange-500/40 transition-all duration-500 shadow-2xl relative"
             >
-              {/* Image Container with Overlay */}
+              {/* Image */}
               <div className="relative h-56 w-full overflow-hidden">
-                <div className="absolute inset-0 bg-orange-600/20 group-hover:bg-transparent z-10 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-orange-600/20 group-hover:bg-transparent transition-all duration-500"></div>
+
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 z-20 transition-all duration-300">
+
+                {/* Overlay Buttons */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center gap-4 transition-all duration-300
+          ${active === index
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100"
+                    }`}
+                >
                   <button className="p-3 bg-white text-black rounded-full hover:bg-orange-500 hover:text-white transition-colors">
                     <Github size={20} />
                   </button>
@@ -78,14 +98,16 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Content Area */}
+              {/* Content */}
               <div className="p-8">
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 mb-2 block">
                   {project.category}
                 </span>
+
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors">
                   {project.title}
                 </h3>
+
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
                   {project.desc}
                 </p>
