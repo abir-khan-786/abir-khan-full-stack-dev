@@ -48,7 +48,7 @@ const Hero = () => {
             className="mb-6 text-3xl font-black leading-tight text-white sm:text-4xl md:text-6xl lg:text-7xl"
           >
             I build
-            <span className="block bg-gradient-to-r from-orange-400 via-white to-cyan-400 bg-clip-text text-transparent">
+            <span className="block text-white sm:bg-gradient-to-r sm:from-orange-400 sm:via-white sm:to-cyan-400 sm:bg-clip-text sm:text-transparent">
               intelligent web products
             </span>
             <span className="block text-white">
