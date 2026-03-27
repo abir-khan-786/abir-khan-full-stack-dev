@@ -42,19 +42,21 @@ const Hero = () => {
           </motion.div>
 
           {/* 🔥 FIXED TEXT */}
+         
           <motion.h1
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 text-3xl font-black leading-tight text-white sm:text-4xl md:text-6xl lg:text-7xl"
-          >
-            I build
-            <span className="block bg-gradient-to-r from-orange-400 via-white to-cyan-400 bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-              intelligent web products
-            </span>
-            <span className="block text-white">
-              for modern businesses
-            </span>
-          </motion.h1>
+  initial={{ opacity: 0, y: 35 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.1 }}
+  className="mb-6 text-3xl font-black leading-tight text-white sm:text-4xl md:text-6xl lg:text-7xl"
+>
+  I build
+  <span className="block text-white [text-shadow:0_0_10px_rgba(249,115,22,0.22),0_0_22px_rgba(34,211,238,0.14)]">
+    intelligent web products
+  </span>
+  <span className="block text-white">
+    for modern businesses
+  </span>
+</motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 35 }}
