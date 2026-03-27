@@ -39,10 +39,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-6 text-4xl font-black leading-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mb-6 text-2xl font-black leading-tight   md:text-6xl lg:text-7xl"
           >
             I build
-            <span className=" bg-gradient-to-r from-orange-400 via-white to-cyan-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-orange-400 via-white to-cyan-400 bg-clip-text text-transparent">
               intelligent web products
             </span>
             for modern businesses
@@ -113,7 +113,7 @@ const Hero = () => {
 
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d1728] shadow-2xl sm:rounded-[2.5rem]">
             <img
-              src="/abir.png"
+              src="/abirkhan.png"
               alt="Abir Khan"
               className="h-[360px] w-full object-cover object-top transition duration-500 hover:scale-105 sm:h-[450px] md:h-[550px]"
             />
