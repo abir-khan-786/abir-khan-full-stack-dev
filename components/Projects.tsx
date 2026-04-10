@@ -16,11 +16,11 @@ const projects = [
   },
   {
     title: "Doctor Hunt",
-    desc: "A healthcare-focused digital platform designed with modern UI, smart flows, and scalable full-stack structure.",
-    image: "/doctor-hunst.png",
-    tech: ["Next.js", "PostgreSQL", "Node.js", "UI/UX"],
-    live: "https://doctor-hunt-client.vercel.app/",
-    github: "https://github.com/abir-khan-786/doctor-hunt-client",
+    desc: "A healthcare-focused digital platform designed with modern UI, smart flows, and scalable full-stack structure. This project is a full-stack web application that allows users to search for doctors, book appointments, and manage their health records.",
+    image: "/doctor.png",
+    tech: ["Next.js", "PostgreSQL", "Node.js", "UI/UX", "TypeScript", "Framer Motion"],
+    live: "https://doctor-hunt-full-stack.vercel.app/",
+    github: "https://github.com/abir-khan-786/doctor_hunt_full_stack",
     tag: "Full-Stack",
   },
   {
