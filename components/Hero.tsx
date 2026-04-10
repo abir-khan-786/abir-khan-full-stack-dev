@@ -41,19 +41,17 @@ const Hero = () => {
             AI-Powered Full-Stack Developer
           </motion.div>
 
-          {/* 🔥 FIXED TEXT */}
           <motion.h1
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 text-3xl font-black leading-tight text-white sm:text-4xl md:text-6xl lg:text-7xl"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-6 text-4xl font-black leading-tight sm:text-5xl md:text-6xl lg:text-7xl"
           >
             I build
-            <span className="block bg-gradient-to-r from-orange-400 via-white to-cyan-400 bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
+            <span className="block bg-gradient-to-r from-orange-400 via-white to-cyan-400 bg-clip-text text-transparent">
               intelligent web products
             </span>
-            <span className="block text-white">
-              for modern businesses
-            </span>
+            for modern businesses
           </motion.h1>
 
           <motion.p
